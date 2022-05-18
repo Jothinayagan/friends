@@ -14,7 +14,13 @@
   <body>
     <%= render 'home/navbar' %>
     <div class='container'>
+    
+      <% if notice %>
+        <%= render 'layouts/alert' %>
+      <% end %>
+      
       <%= yield %>
+    
     </div>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
