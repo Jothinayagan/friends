@@ -13,14 +13,17 @@
           <td scope='col'>Email</td>
           <td scope='col'>Phone</td>
           <td scope='col'>Twitter</td>
+          <td scope='col'>User</td>
           <td scope='col'></td>
         </tr>
       </thead>
       <tbody>
           <% @friends.each do |friend| %>
-            <tr>
-                <%= render partial: "friend_table", locals: {friend:friend} %>
-            </tr>
+            <% if friend.user == current_user %>
+              <tr>
+                  <%= render partial: "friend_table", locals: {friend:friend} %>
+              </tr>
+            <% end %>
           <% end %>
       </tbody>
     </table>
